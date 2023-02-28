@@ -1,5 +1,9 @@
 @use '../util' as u;
 
+%widget {
+    padding: u.rem(16);
+}
+
 .grid {
 
     display: grid;
@@ -34,7 +38,6 @@
 
     }
     &__sidebar {
-        background-color: hsl(300, 100%, 30%);
 
         @include u.breakpoint-down(medium){
             text-align: center;
@@ -42,6 +45,19 @@
 
         @include u.breakpoint-down(small){
             text-align: right;
+        }
+    }
+
+    &__widget {
+
+        &--magenta {
+            @extend %widget;
+            background-color: hsl(300, 100%, 30%);
+        }
+
+        &--green {
+            @extend %widget;
+            background-color: hsl(120, 100%, 27%);
         }
     }
 }
